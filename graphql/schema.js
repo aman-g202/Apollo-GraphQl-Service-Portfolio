@@ -1,6 +1,14 @@
 const { testTypeDefs } = require("../controllers/test");
+const { userTypeDefs } = require("../controllers/user");
 
 const Queries = `#graphql
+
+  type Success {
+    statusCode: Int,
+    responseCode: String,
+    message: String,
+  }
+  
   type Query {
     _empty: String
   }
@@ -10,4 +18,4 @@ const Queries = `#graphql
   }
 `;
 
-module.exports = [Queries, testTypeDefs];
+module.exports = [Queries, testTypeDefs, userTypeDefs];

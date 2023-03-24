@@ -12,9 +12,6 @@ const moment = require("moment");
 const path = require("path");
 const CryptoJS = require("crypto-js");
 const APP_CONSTANTS = require("../constants/app-constants");
-const {
-  validatePaymentVerification,
-} = require("razorpay/dist/utils/razorpay-utils");
 
 const successResponse = ({
   statusCode = 500,
@@ -109,10 +106,6 @@ const reverseNum = (n) => {
   return Math.sign(n) * parseInt(r);
 };
 
-const validatePayment = (body = {}, signature) => {
-  return validatePaymentVerification(body, signature, APP_CONSTANTS.razorPaySecret);
-};
-
 module.exports = {
   successResponse,
   failureResponse,
@@ -126,5 +119,4 @@ module.exports = {
   fileSystem,
   cryptoJS,
   reverseNum,
-  validatePayment,
 };

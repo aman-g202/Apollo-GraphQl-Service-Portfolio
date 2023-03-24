@@ -79,7 +79,7 @@ const server = new Apollo.ApolloServer({
     // This will run every time just before the error sends to the client
     // This will unwrap the instance of GraphQlError to the accessible object
     // console.log(unwrapResolverError(error));
-    const statusCode = unwrapResolverError(error).extensions.http.status;
+    const statusCode = unwrapResolverError(error).extensions.http?.status;
     const message = formattedError.message;
     const errorResponse = {
       message,
@@ -88,7 +88,8 @@ const server = new Apollo.ApolloServer({
 
     if (
       formattedError.extensions.code ===
-      ApolloServerErrorCode.GRAPHQL_VALIDATION_FAILED
+        ApolloServerErrorCode.GRAPHQL_VALIDATION_FAILED ||
+      formattedError.extensions.code === ApolloServerErrorCode.BAD_USER_INPUT
     ) {
       errorResponse.statusCode = statusCode || 422;
       errorResponse.responseCode = "CLIENT_ERROR";

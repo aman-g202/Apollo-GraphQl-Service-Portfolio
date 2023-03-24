@@ -19,7 +19,7 @@ module.exports = {
   guestUrls: [],
   guestAndNonGuestUrls: [],
   uploadUrls: [],
-  userType,
+  userType: [],
   responseCode,
   accessTokenExpiry: `${process.env.ACCESS_TOKEN_EXPIRY}d`,
   refreshTokenExpiry: `${process.env.REFRESH_TOKEN_EXPIRY}d`,
