@@ -1,7 +1,6 @@
-const { ObjectId } = require("mongodb");
-const Service = require("./schema");
-
-module.exports = class UserData {
+import { ObjectId } from "mongodb";
+import Service from "./schema.js";
+export default class ServiceData {
   static findOne(filter, projection = {}) {
     return new Promise(async (resolve, reject) => {
       try {

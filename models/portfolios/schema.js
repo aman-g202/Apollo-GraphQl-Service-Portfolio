@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
-const ObjectId = mongoose.Schema.Types.ObjectId;
-const User = require("../users/schema");
+import { Schema } from "mongoose";
+const ObjectId = Schema.Types.ObjectId;
+import User from "../users/schema.js";
 
-const PortFolioSchema = new mongoose.Schema({
+const PortFolioSchema = new Schema({
   userId: {
     type: ObjectId,
     ref: User,
@@ -17,16 +17,16 @@ const PortFolioSchema = new mongoose.Schema({
   endDate: Date,
   galleryMedia: [
     {
-      type: String,
-      path: String,
-    },
-    {
-      type: String,
-      path: String,
+      type: {
+        type: String,
+      },
+      path: {
+        type: String,
+      },
     },
   ],
 });
 
 const PortFolio = db.model("portfolios", PortFolioSchema);
 
-module.exports = PortFolio;
+export default PortFolio;

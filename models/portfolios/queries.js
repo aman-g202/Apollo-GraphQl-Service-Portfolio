@@ -1,7 +1,6 @@
-const { ObjectId } = require("mongodb");
-const Portfolio = require("./schema");
-
-module.exports = class UserData {
+import { ObjectId } from "mongodb";
+import Portfolio from "./schema.js";
+export default class PortfolioData {
   static findOne(filter, projection = {}) {
     return new Promise(async (resolve, reject) => {
       try {

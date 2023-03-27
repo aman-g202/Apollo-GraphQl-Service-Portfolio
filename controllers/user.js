@@ -171,16 +171,25 @@ export const userTypeDefs = `#graphql
         facts: FactsInput
     }
 
-    extend type Success {
-        result: User
+    type UserCreateRes implements Success {
+      statusCode: Int,
+      responseCode: String,
+      message: String,
+    }
+
+    type UserRes implements Success {
+      statusCode: Int,
+      responseCode: String,
+      message: String,
+      result: User
     }
 
     extend type Query {
-        user(id: ID): Success
+        user(id: ID): UserRes
     }
 
     extend type Mutation {
-        createUser(user: UserInput): Success
+        createUser(user: UserInput): UserCreateRes
     }
 `;
 

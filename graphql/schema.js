@@ -1,9 +1,11 @@
 import { testTypeDefs } from "../controllers/test.js";
 import { userTypeDefs } from "../controllers/user.js";
+import { serviceTypeDefs } from "../controllers/service.js";
+import { portfolioTypeDefs } from "../controllers/portfolio.js";
 
 const Queries = `#graphql
 
-  type Success {
+  interface Success {
     statusCode: Int,
     responseCode: String,
     message: String,
@@ -19,4 +21,4 @@ const Queries = `#graphql
 
 `;
 
-export const GraphQlSchema = [Queries, testTypeDefs, userTypeDefs];
+export const GraphQlSchema = [Queries, testTypeDefs, userTypeDefs, serviceTypeDefs, portfolioTypeDefs];

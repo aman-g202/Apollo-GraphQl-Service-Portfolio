@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
-const ObjectId = mongoose.Schema.Types.ObjectId;
-const User = require("../users/schema");
+import { Schema } from "mongoose";
+const ObjectId = Schema.Types.ObjectId;
+import User from "../users/schema.js";
 
-const ServiceSchema = new mongoose.Schema({
+const ServiceSchema = new Schema({
   userId: {
     type: ObjectId,
     ref: User,
@@ -16,4 +16,4 @@ const ServiceSchema = new mongoose.Schema({
 
 const Service = db.model("services", ServiceSchema);
 
-module.exports = Service;
+export default Service;
