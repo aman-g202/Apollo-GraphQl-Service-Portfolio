@@ -1,13 +1,13 @@
 /**
  * name : index.js.
- * author : Aman Karki.
+ * author : Aman Gupta.
  * created-date : 17-Dec-2021.
  * Description : Health check Root file.
 */
 
-let healthCheckService = require("./health-check");
+import { healthCheckStatus, health_check } from "./health-check.js";
 
-module.exports = function (app) {
-    app.get("/healthCheckStatus",healthCheckService.healthCheckStatus);
-    app.get("/health",healthCheckService.health_check);
+export default function (app) {
+    app.get("/healthCheckStatus",healthCheckStatus);
+    app.get("/health",health_check);
 }

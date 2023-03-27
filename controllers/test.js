@@ -1,6 +1,6 @@
-const { GraphQLError } = require("graphql");
+import { GraphQLError } from "graphql";
 
-exports.testTypeDefs = `#graphql
+export const testTypeDefs = `#graphql
     type Book {
         title: String
         author: String
@@ -24,7 +24,7 @@ exports.testTypeDefs = `#graphql
     }
 `;
 
-exports.testResolvers = {
+export const testResolvers = {
   Query: {
     books: () => {
       return [

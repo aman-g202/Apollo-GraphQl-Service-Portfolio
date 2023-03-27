@@ -1,17 +1,17 @@
 /**
  * name : configs/mongodb
- * author : Aman
+ * author : Aman Gupta
  * Date : 22-Oct-2022
  * Description : Mongodb connections configurations
  */
 
 //Dependencies
-const mongoose = require("mongoose");
-const mongoose_autopopulate = require("mongoose-autopopulate");
-const mongoose_timestamp = require("mongoose-timestamp");
+import mongoose from "mongoose";
+import mongoose_autopopulate from 'mongoose-autopopulate'
+import mongoose_timestamp from 'mongoose-timestamp'
 
-module.exports = function () {
-  const db = mongoose.createConnection(process.env.MONGODB_URL, {
+export default function () {
+  const db = mongoose.createConnection("mongodb://127.0.0.1:27017/portfolio", {
     useNewUrlParser: true,
   });
 

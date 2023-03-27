@@ -1,14 +1,12 @@
-// import { merge } from 'lodash';
-const { testResolvers } = require("../controllers/test");
-const { userResolvers } = require("../controllers/user");
+import { testResolvers } from "../controllers/test.js";
+import { userResolvers } from "../controllers/user.js";
 
-module.exports = {
-  Query: {
-    ...testResolvers.Query,
-    ...userResolvers.Query
-  },
-  Mutation: {
-    ...testResolvers.Mutation,
-    ...userResolvers.Mutation
-  },
+export const Query = {
+  ...testResolvers.Query,
+  ...userResolvers.Query,
+};
+
+export const Mutation = {
+  ...testResolvers.Mutation,
+  ...userResolvers.Mutation,
 };

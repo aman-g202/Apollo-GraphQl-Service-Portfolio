@@ -1,5 +1,5 @@
-const { testTypeDefs } = require("../controllers/test");
-const { userTypeDefs } = require("../controllers/user");
+import { testTypeDefs } from "../controllers/test.js";
+import { userTypeDefs } from "../controllers/user.js";
 
 const Queries = `#graphql
 
@@ -16,6 +16,7 @@ const Queries = `#graphql
   type Mutation {
     _empty: String
   }
+
 `;
 
-module.exports = [Queries, testTypeDefs, userTypeDefs];
+export const GraphQlSchema = [Queries, testTypeDefs, userTypeDefs];

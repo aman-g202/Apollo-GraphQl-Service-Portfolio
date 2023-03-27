@@ -5,7 +5,7 @@
  * Description : All http status code's and there message.
  */
 
-module.exports = {
+export default {
   'ok': 200,
   'created': 201,
   'accepted': 202,

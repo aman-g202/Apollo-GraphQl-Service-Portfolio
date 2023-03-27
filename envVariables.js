@@ -1,4 +1,4 @@
-let table = require("cli-table");
+import table from 'cli-table';
 
 let tableData = new table();
 
@@ -47,7 +47,7 @@ let enviromentVariables = {
 
 let success = true;
 
-module.exports = function () {
+export default function () {
   Object.keys(enviromentVariables).forEach((eachEnvironmentVariable) => {
     let tableObj = {
       [eachEnvironmentVariable]: "PASSED",

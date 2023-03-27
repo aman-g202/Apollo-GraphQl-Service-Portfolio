@@ -1,9 +1,10 @@
-const { GraphQLError } = require("graphql");
-const { GraphQLDateTime } = require("graphql-iso-date");
+import { GraphQLError } from "graphql";
+import GraphQlIsoDate  from "graphql-iso-date";
+const { GraphQLDateTime } = GraphQlIsoDate;
 
-const UserService = require("../core-services/user");
+import UserService from '../core-services/user.js';
 
-exports.userTypeDefs = `#graphql
+export const userTypeDefs = `#graphql
     scalar ISODate
 
     type SocialMedia {
@@ -183,7 +184,7 @@ exports.userTypeDefs = `#graphql
     }
 `;
 
-exports.userResolvers = {
+export const userResolvers = {
   Query: {
     user: async (parent, args, context, info) => {
       const { id: userId } = args;

@@ -1,4 +1,2 @@
-module.exports = {
-    USER_CREATED_SUCCESSFULLY: "User created successfully",
-    USER_FETCHED_SUCCESSFULLY: "User fetched successfully",
-};
+export const USER_CREATED_SUCCESSFULLY = "User created successfully";
+export const USER_FETCHED_SUCCESSFULLY = "User fetched successfully";
