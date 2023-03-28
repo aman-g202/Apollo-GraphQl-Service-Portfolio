@@ -2,6 +2,7 @@ import { testTypeDefs } from "../controllers/test.js";
 import { userTypeDefs } from "../controllers/user.js";
 import { serviceTypeDefs } from "../controllers/service.js";
 import { portfolioTypeDefs } from "../controllers/portfolio.js";
+import { contactTypeDefs } from "../controllers/contact.js";
 
 const Queries = `#graphql
 
@@ -21,4 +22,11 @@ const Queries = `#graphql
 
 `;
 
-export const GraphQlSchema = [Queries, testTypeDefs, userTypeDefs, serviceTypeDefs, portfolioTypeDefs];
+export const GraphQlSchema = [
+  Queries,
+  testTypeDefs,
+  userTypeDefs,
+  serviceTypeDefs,
+  portfolioTypeDefs,
+  contactTypeDefs,
+];

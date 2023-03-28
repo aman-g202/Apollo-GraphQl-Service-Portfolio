@@ -1,7 +1,6 @@
-const { ObjectId } = require("mongodb");
-const Contact = require("./schema");
-
-module.exports = class UserData {
+import { ObjectId } from "mongodb";
+import Contact from "./schema.js";
+export default class UserData {
   static findOne(filter, projection = {}) {
     return new Promise(async (resolve, reject) => {
       try {
