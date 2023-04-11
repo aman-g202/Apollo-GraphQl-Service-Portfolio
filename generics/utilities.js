@@ -30,7 +30,7 @@ export const successResponse = ({
 export const failureResponse = ({
   message = "Oops! Something Went Wrong.",
   statusCode = 500,
-  responseCode,
+  responseCode = 'SERVER_ERROR',
 }) => {
   const error = new Error(message);
   error.statusCode = statusCode;

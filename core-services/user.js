@@ -27,6 +27,13 @@ export default class UserService {
   static async findUser(userId) {
     try {
       const result = await UsersData.findById(userId);
+      if (!result) {
+        throw failureResponse({
+          message: API_MESSAGES.USER_NOT_FOUND,
+          statusCode: HTTP_STATUS_CODE.not_found,
+          responseCode: 'CLIENT_ERROR'
+        })
+      }
       return successResponse({
         message: API_MESSAGES.USER_FETCHED_SUCCESSFULLY,
         statusCode: HTTP_STATUS_CODE.ok,
