@@ -45,7 +45,7 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*"); // * could be replace by respective domains which we want to allow, * means for all domains
   res.setHeader(
     "Access-Control-Allow-Methods",
-    "GET, POST, PUT, PATCH, DELETE OPTIONS"
+    "GET, POST, PUT, PATCH, DELETE, OPTIONS"
   );
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   if (req.method === "OPTIONS") {
