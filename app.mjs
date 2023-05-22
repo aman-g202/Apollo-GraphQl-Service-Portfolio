@@ -9,6 +9,10 @@ import {
 } from "@apollo/server/errors";
 import { expressMiddleware } from "@apollo/server/express4";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
+import {
+  ApolloServerPluginLandingPageLocalDefault,
+  ApolloServerPluginLandingPageProductionDefault,
+} from "@apollo/server/plugin/landingPage/default";
 
 /* Configurations Setup */
 import dotenv from "dotenv";
@@ -91,7 +95,15 @@ const server = new ApolloServer({
   typeDefs: GraphQlSchema,
   resolvers: GraphQlResolvers,
   includeStacktraceInErrorResponses: true,
-  plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+  plugins: [
+    ApolloServerPluginDrainHttpServer({ httpServer }),
+    process.env.NODE_ENV === "production"
+      ? ApolloServerPluginLandingPageProductionDefault({
+          footer: false,
+          embed: false,
+        })
+      : ApolloServerPluginLandingPageLocalDefault(),
+  ],
   formatError: (formattedError, error) => {
     // This will run every time just before the error sends to the client
     // This will unwrap the instance of GraphQlError to the accessible object
