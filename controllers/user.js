@@ -117,8 +117,8 @@ export const userTypeDefs = `#graphql
     }
 
     input FactsInput {
-        projectsCompleted: Int,
-        happyClients: Int,
+        projectsCompleted: String,
+        happyClients: String,
         professionalStartYear: Int,
     }
 

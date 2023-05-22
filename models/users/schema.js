@@ -73,8 +73,8 @@ const UserSchema = new Schema({
     },
   ],
   facts: {
-    projectsCompleted: Number,
-    happyClients: Number,
+    projectsCompleted: String,
+    happyClients: String,
     professionalStartYear: Number,
   },
 });
