@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      script: "./app.js",
+      script: "./app.mjs",
       env_stage: {
         name: "AMAN_PORTFOLIO_STAGE-3000",
         NODE_ENV: "staging",
