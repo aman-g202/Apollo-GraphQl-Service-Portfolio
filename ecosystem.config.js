@@ -7,7 +7,7 @@ module.exports = {
         NODE_ENV: "staging",
       },
       env_prod: {
-        name: "AMAN_PORTFOLIO_PROD-3001",
+        name: "AMAN_PORTFOLIO_PROD-3040",
         NODE_ENV: "production",
       },
     },
