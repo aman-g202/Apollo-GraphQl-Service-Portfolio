@@ -152,7 +152,7 @@ app.use(
 // Modified server startup
 await new Promise((resolve, reject) => {
   const server = httpServer.listen(
-    { port: process.env.APPLICATION_PORT },
+    { port: process.env.APPLICATION_PORT, host: "localhost" },
     resolve
   );
   server.on("error", onError);
