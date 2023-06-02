@@ -58,7 +58,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post("/graphql/upload", upload.array("file", 10), (req, res, next) => {
+app.put("/upload", upload.array("file", 10), (req, res, next) => {
   if (!req.files || !req.files.length) {
     const error = new Error("File not provided");
     error.statusCode = 422;
