@@ -139,7 +139,12 @@ await server.start();
 // and our expressMiddleware function.
 app.use(
   "/",
-  cors(),
+  cors({
+    methods: ["PUT", "OPTIONS"],
+    credentials: true,
+    maxAge: 600,
+    origin: ["*"],
+  }),
   // 50mb is the limit that `startStandaloneServer` uses, but you may configure this to suit your needs
   bodyParser.json({ limit: "50mb" }),
   // expressMiddleware accepts the same arguments:
