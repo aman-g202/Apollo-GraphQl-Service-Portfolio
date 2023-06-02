@@ -157,7 +157,7 @@ app.use(
 // Modified server startup
 await new Promise((resolve, reject) => {
   const server = httpServer.listen(
-    { port: process.env.APPLICATION_PORT, host: "127.0.0.1" },
+    { port: process.env.APPLICATION_PORT },
     resolve
   );
   server.on("error", onError);
