@@ -141,7 +141,7 @@ app.use(
   "/",
   cors({
     methods: ["PUT", "OPTIONS"],
-    credentials: true,
+    credentials: false,
     maxAge: 600,
     origin: ["*"],
   }),
@@ -157,7 +157,7 @@ app.use(
 // Modified server startup
 await new Promise((resolve, reject) => {
   const server = httpServer.listen(
-    { port: process.env.APPLICATION_PORT, host: "localhost" },
+    { port: process.env.APPLICATION_PORT, host: "127.0.0.1" },
     resolve
   );
   server.on("error", onError);
