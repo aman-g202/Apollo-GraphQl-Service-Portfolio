@@ -40,7 +40,6 @@ const app = express();
 const httpServer = http.createServer(app);
 
 import HealthCheck from "./health-checks/index.js";
-import path from "path";
 HealthCheck(app);
 
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
@@ -58,8 +57,6 @@ app.use((req, res, next) => {
   }
   next();
 });
-
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 app.put("/upload", upload.array("file", 10), (req, res, next) => {
   if (!req.files || !req.files.length) {
