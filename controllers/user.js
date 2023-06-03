@@ -12,6 +12,7 @@ export const userTypeDefs = `#graphql
         twitter: String,
         linkedIn: String,
         stackOverFlow: String,
+        github: String
     }
 
     input SocialMediaInput {
@@ -19,6 +20,7 @@ export const userTypeDefs = `#graphql
         twitter: String,
         linkedIn: String,
         stackOverFlow: String,
+        github: String
     }
 
     type Address {
