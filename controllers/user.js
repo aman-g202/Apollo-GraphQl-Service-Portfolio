@@ -111,8 +111,8 @@ export const userTypeDefs = `#graphql
     }
 
     type Facts {
-        projectsCompleted: Int,
-        happyClients: Int,
+        projectsCompleted: String,
+        happyClients: String,
         professionalStartYear: Int,
     }
 
