@@ -8,6 +8,12 @@ const diskStorage = multer.diskStorage({
     if (req.body.type == "profileUrl") {
       dirExists("assets/images/profiles");
       cb(null, "assets/images/profiles");
+    } else if (req.body.type == "portfolio") {
+      dirExists("assets/images/portfolio");
+      cb(null, "assets/images/portfolio");
+    } else if (req.body.type == "service") {
+      dirExists("assets/images/service");
+      cb(null, "assets/images/service");
     }
   },
   filename: function (req, file, cb) {
