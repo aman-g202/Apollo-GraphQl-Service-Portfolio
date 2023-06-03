@@ -10,6 +10,7 @@ const UserSchema = new Schema({
     twitter: String,
     linkedIn: String,
     stackOverFlow: String,
+    github: String,
   },
   profilePhotoPath: String,
   description: String,
